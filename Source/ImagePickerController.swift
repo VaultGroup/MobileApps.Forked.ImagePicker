@@ -434,9 +434,9 @@ extension ImagePickerController: CameraViewDelegate {
 
   // MARK: - Rotation
 
-  open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    return .portrait
-  }
+//  open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//    return .portrait
+//  }
 
   @objc public func handleRotation(_ note: Notification?) {
     applyOrientationTransforms()
@@ -461,6 +461,8 @@ extension ImagePickerController: CameraViewDelegate {
       }
 
       self.topView.flashButton.transform = rotate.concatenating(translate)
+      
+      self.cameraController.previewLayer?.connection?.videoOrientation = Helper.videoOrientation()
     })
   }
 }

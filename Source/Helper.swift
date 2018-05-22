@@ -6,6 +6,8 @@ struct Helper {
   static var previousOrientation = UIDeviceOrientation.unknown
 
   static func getTransform(fromDeviceOrientation orientation: UIDeviceOrientation) -> CGAffineTransform {
+    // Orientation handled by parent VC when in form sheet view
+    return CGAffineTransform.identity
     switch orientation {
     case .landscapeLeft:
       return CGAffineTransform(rotationAngle: CGFloat.pi * 0.5)
