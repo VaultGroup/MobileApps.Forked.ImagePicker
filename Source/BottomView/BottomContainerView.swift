@@ -17,7 +17,7 @@ open class BottomContainerView: UIView {
   var configuration = Configuration()
 
   lazy var pickerButton: ButtonPicker = { [unowned self] in
-    let pickerButton = ButtonPicker(configuration: self.configuration)
+    let pickerButton = ButtonPicker(customConfiguration: self.configuration)
     pickerButton.setTitleColor(UIColor.white, for: UIControlState())
     pickerButton.delegate = self
     pickerButton.numberLabel.isHidden = !self.configuration.showsImageCountLabel
